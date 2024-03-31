@@ -2,32 +2,51 @@ var app = angular.module("myapp", ["ngRoute"]);
 app.config(function ($routeProvider) {
   $routeProvider
     .when("/index", {
-      templateUrl: "view/home.html",
+      templateUrl: "views/home.html",
       controller: "homeController",
     })
     .when("/product", {
-      templateUrl: "view/product.html",
+      templateUrl: "views/product.html",
+      controller: "productController",
     })
     .when("/productdetail", {
-      templateUrl: "view/productdetail.html",
+      templateUrl: "views/productdetail.html",
+      controller: "productdetailController",
     })
     .when("/contact", {
-      templateUrl: "view/contact.html",
+      templateUrl: "views/contact.html",
+      controller: "contactController",
     })
     .when("/about", {
-      templateUrl: "view/about.html",
+      templateUrl: "views/about.html",
+      controller: "aboutController",
     })
     .when("/login", {
-      templateUrl: "view/login.html",
+      templateUrl: "views/login.html",
+      controller: "loginController",
     })
     .when("/register", {
-      templateUrl: "view/register.html",
+      templateUrl: "views/register.html",
+      controller: "registerController",
     })
     .when("/forgot", {
-      templateUrl: "view/forgot.html",
+      templateUrl: "views/forgot.html",
+      controller: "forgotController",
     })
     .otherwise({
       redirectTo: "/index",
       controller: "homeController",
     });
+});
+app.run(function ($rootScope) {
+  $rootScope.$on("$routeChangeStart", function () {
+    $rootScope.loading = true;
+  });
+  $rootScope.$on("$routeChangeSuccess", function () {
+    $rootScope.loading = false;
+  });
+  $rootScope.$on("$routeChangeError", function () {
+    $rootScope.loading = false;
+    alert("Error");
+  });
 });
