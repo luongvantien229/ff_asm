@@ -1,9 +1,9 @@
 var app = angular.module("myapp", ["ngRoute"]);
 app.config(function ($routeProvider) {
   $routeProvider
-    .when("/index", {
+    .when("/", {
       templateUrl: "views/home.html",
-      controller: "homeController",
+      controller: homeController
     })
     .when("/product", {
       templateUrl: "views/product.html",
@@ -34,8 +34,8 @@ app.config(function ($routeProvider) {
       controller: "forgotController",
     })
     .otherwise({
-      redirectTo: "/index",
-      controller: "homeController",
+      redirectTo: "/",
+      controller: homeController
     });
 });
 app.run(function ($rootScope) {

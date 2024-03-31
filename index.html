@@ -47,16 +47,17 @@
         class="carousel carousel-dark slide"
       ></div>
       <div class="container">
-      <ng-view></ng-view>
-    </div>
-    <div class="container">
-      <footer
-        ng-include="'views/layouts/footer.html'"
-        class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"
-      ></footer>
+        <ng-view></ng-view>
+      </div>
+      <div class="container">
+        <footer
+          ng-include="'views/layouts/footer.html'"
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top"
+        ></footer>
+      </div>
     </div>
 
     <script src="controllers/route.js"></script>
-    <!-- <script src="controllers/homeController.js"></script> -->
+    <script src="controllers/homeController.js"></script>
   </body>
 </html>
