@@ -1,0 +1,3 @@
+window.homeController = function ($scope) {
+
+}
